@@ -155,8 +155,9 @@
         }
 
         .vehicles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
         }
 
@@ -165,6 +166,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            flex: 0 1 300px;
+            margin-bottom: 20px;
         }
 
         .vehicle-img {
@@ -179,10 +182,10 @@
         }
         
         /* 由於無法直接提供您的圖片，這裡使用顏色區塊代替，您之後可以替換成真實圖片的<img>標籤 */
-        .https://stcar.net/5-seater-car/ { background: #e3f2fd; }
+        .https://stcar.net/wp-content/uploads/2025/12/okinawa-stcar-1024x683.png { background: #e3f2fd; }
         .vehicle-img.serena { background: #e8f5e9; }
-        .https://stcar.net/7-seater-car/ { background: #fff3e0; }
-        .https://stcar.net/10-seater-car/ { background: #f3e5f5; }
+        .https://stcar.net/wp-content/uploads/2025/12/okinawa-stcar-Alpha.webp { background: #fff3e0; }
+        .https://stcar.net/wp-content/uploads/2025/12/okinawa-stcar-haies-1024x683.webp { background: #f3e5f5; }
 
         .vehicle-info {
             padding: 20px;
@@ -427,14 +430,14 @@
             <div class="plan-box popular">
                 <span class="plan-tag">最熱門</span>
                 <h3>10 小時精華遊</h3>
-                <p class="price">沖繩本島全域</p>
+                <p class="price">沖繩本島中北部</p>
                 <p>最受歡迎的選擇，足夠時間走訪中北部精華景點。</p>
                 <hr>
                 <p>行程範例：萬座毛 -> 古宇利島 -> 美麗海水族館 -> 美國村</p>
             </div>
             <div class="plan-box">
                 <h3>8 小時南部經典遊</h3>
-                <p class="price">沖繩本島全域</p>
+                <p class="price">沖繩本島南部</p>
                 <p>玩好玩滿！適合想一次打卡人文景點的旅客。</p>
                 <hr>
                 <p>行程範例：知念岬 -> 玉泉洞 -> 糸滿魚市場 ->瀨長島 </p>
