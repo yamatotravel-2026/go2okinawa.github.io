@@ -8,341 +8,362 @@
     <meta property="og:image" content="https://yamatotravel-2026.github.io/go2okinawa/alphard.png"> <meta property="og:url" content="https://yamatotravel-2026.github.io/go2okinawa/">
     <link rel="icon" href="logo.jpg" type="image/png">
     <title>沖繩專業包車旅遊｜客製化行程 5/8/10 小時服務</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-       :root {
-        /* --- 高階配色方案 --- */
-        --primary-color: #0f2a4a;    /* 深海藍 (專業、穩重) */
-        --accent-color: #c5a065;     /* 香檳金 (高級感點綴) */
-        --text-dark: #333333;        /* 主要文字 */
-        --text-light: #666666;       /* 次要文字 */
-        --bg-light: #f8f9fa;         /* 淺灰背景 (不刺眼) */
-        --white: #ffffff;
-        --shadow: 0 10px 30px rgba(0,0,0,0.08); /* 柔和的高級陰影 */
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-    }
-
-    body {
-        font-family: 'Noto Sans TC', sans-serif; /* 使用新字體 */
-        line-height: 1.8; /* 增加行高，閱讀更舒適 */
-        color: var(--text-dark);
-        background-color: var(--bg-light);
-    }
-
-    /* --- 導航列 (玻璃質感) --- */
-    header {
-        background-color: rgba(255, 255, 255, 0.95); /* 半透明白 */
-        backdrop-filter: blur(10px); /* 模糊背景效果 */
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 20px rgba(0,0,0,0.05); /* 極淡的陰影 */
-        transition: all 0.3s ease;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 5%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        text-decoration: none;
-        letter-spacing: 1px; /* 字距微調 */
-    }
-
-    .nav-links a {
-        margin-left: 25px;
-        text-decoration: none;
-        color: var(--text-dark);
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: color 0.3s;
-        position: relative;
-    }
-
-    .nav-links a:hover {
-        color: var(--accent-color);
-    }
-
-    /* --- Hero 區塊 (全螢幕大氣感) --- */
-    .hero {
-        background: linear-gradient(rgba(15, 42, 74, 0.6), rgba(15, 42, 74, 0.4)), url('okinawa-bg.jpg'); /* 圖片建議換一張高畫質的 */
-        background-size: cover;
-        background-position: center;
-        height: 90vh; /* 佔滿 90% 螢幕高度 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        margin-bottom: 0; /* 貼齊下方 */
-    }
-
-    .hero-content h1 {
-        font-size: 3.5rem; /* 更大的標題 */
-        margin-bottom: 20px;
-        font-weight: 700;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-        letter-spacing: 2px;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        margin-bottom: 40px;
-        opacity: 0.9;
-        font-weight: 300;
-    }
-
-    .cta-button {
-        background-color: var(--accent-color);
-        color: white;
-        padding: 15px 40px;
-        text-decoration: none;
-        border-radius: 50px; /* 圓潤按鈕 */
-        font-weight: bold;
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: inline-block;
-        box-shadow: 0 5px 15px rgba(197, 160, 101, 0.4);
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px); /* 懸浮效果 */
-        box-shadow: 0 8px 20px rgba(197, 160, 101, 0.6);
-        background-color: #b08d55;
-    }
-
-    /* --- 通用區塊設定 --- */
-    section {
-        padding: 80px 20px; /* 增加上下留白 */
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    h2 {
-        text-align: center;
-        font-size: 2.2rem;
-        margin-bottom: 60px;
-        color: var(--primary-color);
-        position: relative;
-    }
-
-    /* 標題下方的裝飾線 */
-    h2::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background-color: var(--accent-color);
-        margin: 15px auto 0;
-    }
-
-    /* --- 服務特色 (卡片式) --- */
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-    }
-
-    .feature-card {
-        background: var(--white);
-        padding: 40px 30px;
-        border-radius: 15px; /* 圓角 */
-        text-align: center;
-        box-shadow: var(--shadow); /* 高級陰影 */
-        transition: transform 0.3s ease;
-        border: 1px solid rgba(0,0,0,0.02);
-    }
-
-    .feature-card:hover {
-        transform: translateY(-10px); /* 滑鼠移過去會浮起來 */
-    }
-
-    .feature-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        display: inline-block;
-    }
-
-    /* --- 車款介紹 (圖片優化) --- */
-    .vehicles-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
-
-    .vehicle-card {
-        background: var(--white);
-        border-radius: 15px;
-        overflow: hidden; /* 確保圖片不超出圓角 */
-        box-shadow: var(--shadow);
-        transition: transform 0.3s ease;
-    }
-
-    .vehicle-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .vehicle-card img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        transition: transform 0.5s;
-    }
-
-    .vehicle-card:hover img {
-        transform: scale(1.05); /* 圖片微微放大 */
-    }
-
-    .vehicle-info {
-        padding: 25px;
-    }
-
-    .vehicle-info h3 {
-        color: var(--primary-color);
-        margin-bottom: 10px;
-        font-size: 1.3rem;
-    }
-
-    .detail-list {
-        list-style: none;
-        margin-top: 15px;
-        text-align: left;
-        padding-left: 10px;
-    }
-    
-    .detail-list li {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-    }
-
-    .detail-list li::before {
-        content: '✓';
-        color: var(--accent-color);
-        margin-right: 8px;
-        font-weight: bold;
-    }
-
-    /* --- 方案卡片 (推薦標籤) --- */
-    .plans-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-
-    .plan-card {
-        background: var(--white);
-        border-radius: 15px;
-        padding: 40px 30px;
-        box-shadow: var(--shadow);
-        position: relative;
-        border: 1px solid #eee;
-        transition: border-color 0.3s;
-    }
-    
-    .plan-card:hover {
-        border-color: var(--accent-color);
-    }
-
-    .popular-tag {
-        background-color: var(--accent-color);
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 5px 15px;
-        border-radius: 0 15px 0 15px;
-        font-size: 0.85rem;
-        font-weight: bold;
-    }
-
-    /* --- 諮詢範本區 (更簡潔) --- */
-    .consult-box {
-        background: var(--white);
-        border-left: 4px solid var(--accent-color);
-        padding: 30px;
-        text-align: left;
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-        border-radius: 8px;
-        box-shadow: var(--shadow);
-    }
-
-    /* --- 按鈕樣式統一 --- */
-    .btn-large {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 25px;
-        text-decoration: none;
-        color: white;
-        border-radius: 50px;
-        font-weight: 500;
-        transition: filter 0.3s;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    
-    .btn-large:hover {
-        filter: brightness(1.1);
-    }
-
-    /* --- 手機版適配 (漢堡選單邏輯優化) --- */
-    @media (max-width: 768px) {
-        .hero-content h1 { font-size: 2.2rem; }
-        section { padding: 50px 20px; }
-        nav { flex-direction: column; padding: 15px; }
-        .nav-links { 
-            margin-top: 15px; 
-            display: flex; 
-            gap: 10px; 
-            justify-content: center; 
-            flex-wrap: wrap; 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
-        .nav-links a { margin: 0; padding: 5px 10px; font-size: 0.85rem; }
-    }
-    
-    /* --- 右下角懸浮按鈕 --- */
-    .float-btn {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 30px;
-        right: 30px;
-        background-color: #00c300;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 15px rgba(0,195,0,0.4);
-        z-index: 9999;
-        text-decoration: none;
-        font-weight: bold;
-        transition: transform 0.3s;
-    }
-    .float-btn:hover { transform: scale(1.1); }
+        /* 全局設定 */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+        }
+
+        /* 導航欄 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hero 區塊 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.rurubu.jp/img_srw/andmore/images/0000478213/UH4YJyULdWZVu3sOR5uGRoChbGcHjJiA5dq6Oekl.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 通用區塊樣式 */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* 服務特色 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* 車型介紹 */
+        .bg-light {
+            background-color: var(--light-bg);
+            width: 100%;
+            max-width: 100%; 
+        }
+
+        .vehicles-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .vehicle-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            flex: 0 1 300px;
+            margin-bottom: 20px;
+        }
+          
+       
+        .vehicle-info {
+            padding: 20px;
+        }
+
+        .vehicle-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .specs li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .specs li::before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* 方案詳情 */
+        .plans-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .plan-box {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .plan-box.popular {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0,123,255,0.2);
+            position: relative;
+        }
+
+        .plan-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        /* 費用說明 */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .detail-list ul {
+            padding-left: 20px;
+        }
+
+        .detail-list.included li { color: #333333; }
+        .detail-list.excluded li { color: #333333; }
+
+        /* 聯絡我們 */
+        .contact-cta {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        .contact-cta h2 { color: white; }
+
+        .btn-large {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn-large:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .float-btn {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #00c300;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            background-color: #00b300;
+        }
+
+        /* 手機版調整 */
+        /* --- 📱 手機版導航欄專用修復代碼 --- */
+        @media (max-width: 768px) {
+            /* 1. 讓導航欄變成垂直排列 (Logo在上，選單在下) */
+            nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            /* 2. 調整 Logo 大小與位置 */
+            .logo {
+                margin-bottom: 15px;    /* Logo 下方留白 */
+                font-size: 1.4rem;      /* Logo 字體改小 */
+                text-align: center;     /* 文字置中 */
+                line-height: 1.4;       /* 增加行高防止文字重疊 */
+            }
+
+            /* 3. 調整選單連結 */
+            .nav-links {
+                display: flex;          /* 啟用彈性佈局 */
+                flex-wrap: wrap;        /* 允許按鈕換行，不要硬塞 */
+                justify-content: center;/* 按鈕置中對齊 */
+                gap: 10px;              /* 按鈕之間的間距 */
+                width: 100%;            /* 佔滿寬度 */
+            }
+
+            .nav-links a {
+                margin-left: 0;         /* 清除電腦版的左邊距 */
+                font-size: 0.9rem;      /* 字體縮小 */
+                padding: 5px 10px;      /* 增加按鈕內距 */
+                background-color: #f0f2f5; /* 加個淺灰底色，讓它看起來像按鈕 */
+                border-radius: 5px;     /* 圓角 */
+            }
+            
+            /* 4. 特別調整「立即預約」按鈕 */
+            .cta-button {
+                background-color: var(--primary-color) !important; /* 保持藍色 */
+                color: white !important;
+            }
+
+            /* 5. 調整大標題文字大小，避免太滿 */
+            .hero-content h1 {
+                font-size: 2rem;        /* 標題字改小 */
+                padding: 0 10px;        /* 左右留點邊距 */
+            }
+        }
+        }
     </style>
 </head>
 <body>
@@ -404,7 +425,7 @@
                     <div class="vehicle-info">
                         <h3>舒適 5 人座</h3>
                         <ul class="specs">
-                            <li>建議人數：1-4 位乘客</li>
+                            <li>建議人數：4 位乘客</li>
                             <li>行李容量：2 件 28 吋以下行李</li>
                             <li>適合情侶、小家庭</li>
                         </ul>
@@ -416,7 +437,7 @@
                     <div class="vehicle-info">
                         <h3>商務 6 人座</h3>
                         <ul class="specs">
-                            <li>建議人數：2-5 位乘客</li>
+                            <li>建議人數：5 位乘客</li>
                             <li>行李容量：2 件 28 吋以下行李</li>
                             <li>空間寬敞舒適</li>
                         </ul>
@@ -428,7 +449,7 @@
                     <div class="vehicle-info">
                         <h3>豪華 7 人座</h3>
                         <ul class="specs">
-                            <li>建議人數：2-5 位成人</li>
+                            <li>建議人數：5 位成人</li>
                             <li>行李容量：4 件 28 吋以下行李</li>
                             <li>VIP 尊榮體驗</li>
                         </ul>
@@ -440,7 +461,7 @@
                     <div class="vehicle-info">
                         <h3>經濟 10 人座</h3>
                         <ul class="specs">
-                            <li>建議人數：5-9 位乘客</li>
+                            <li>建議人數：9 位乘客</li>
                             <li>行李容量：10 件 28 吋以下行李</li>
                             <li>適合家族旅遊、朋友團</li>
                         </ul>
@@ -509,19 +530,14 @@
                             <li>景點門票、個人餐費</li>
                             <li>第二張安全座椅 (2000日幣/張)</li>
                             <li>超時費用、夜間加成</li>
-                            <li>跨區空車費、偏遠地區加價</li>
+                            <li>偏遠地區加價</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 30px; background: #fff; padding: 20px; border-radius: 8px;">
-                <h4>取消政策 <span style="font-size: 0.8em; font-weight: normal; color: #666;">(以日本時間 GMT+9 為準)</span></h4>
-                <p style="line-height: 1.8;">
-                    所選日期 5 天（含）之前取消，未使用可免費取消。<br>
-                    所選日期 1 ~ 4 天之間取消，收取手續費 60%。<br>
-                    當日取消無法退款。<br>
-                    <span style="color: #e74c3c; font-size: 0.9em;">* 注意：所有取消時間判定均以日本標準時間為準，請留意時差。</span>
-                </p>
+                <h4>取消政策</h4>
+                <p>所選日期 5 天（含）之前取消，未使用可免費取消。<br>所選日期 1 ~ 4 天之間取消，收取手續費 60%。<br>當日取消無法退款。</p>
             </div>
         </section>
     </div>
