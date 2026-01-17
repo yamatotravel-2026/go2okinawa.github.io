@@ -20,6 +20,9 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
+            
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
         /* 全局設定 */
         :root {
@@ -345,7 +348,7 @@
             white-space: nowrap; /* 防止文字換行 */
         }
 
-      .check-icon {
+        .check-icon {
             color: #00c300; /* 勾勾顏色 (LINE綠) */
             font-weight: bold;
             margin-right: 8px;
@@ -356,9 +359,9 @@
         /* --- 📱 手機版導航欄專用修復代碼 --- */
         @media (max-width: 768px) {
             .features-grid, .vehicles-grid, .plans-grid, .details-grid {
-                grid-template-columns: 1fr !important; /* 強制一行一張 */
-                gap: 30px !important; /* 卡片之間的距離 */
-                display: grid !important; /* 確保 Grid 系統運作 */
+                grid-template-columns: 1fr; !important; /* 強制一行一張 */
+                gap: 30px; !important; /* 卡片之間的距離 */
+                display: grid; !important; /* 確保 Grid 系統運作 */
             }
             /* 1. 讓導航欄變成垂直排列 (Logo在上，選單在下) */
             nav {
@@ -366,13 +369,14 @@
                 padding: 15px;
             }
             body {
-                font-size: 17px; /* 電腦是 16px，手機改 17px 更清楚 */
-                font-weight: 400; /* 避免字體太細，手機上改回標準粗細 */
+                font-size: 16px; !important;/* 電腦是 16px，手機改 17px 更清楚 */
+                font-weight: 400; !important;/* 避免字體太細，手機上改回標準粗細 */
             }
 
-            p, li {
-                line-height: 1.7; /* 拉開行距，閱讀不擁擠 */
-                color: #222; /* 字體顏色加深一點，對比度更高 */
+            p, li, a, span {
+                font-size: 16px; /* 確保內文都是 16px */
+                line-height: 1.6;
+                color: #222;
             }
 
             /* 2. 調整 Logo 大小與位置 */
@@ -409,14 +413,17 @@
             }
 
             section {
-                padding: 50px 20px; /* 減少上下留白 */
+                padding: 40px 20px; !important;/* 減少上下留白 */
             }
 
-            h2 {
-                font-size: 1.8rem; /* 手機版標題不用太大 */
-                margin-bottom: 30px;
+            h1 { font-size: 2.2rem !important; } /* 主標題 */
+            h2 { font-size: 1.7rem !important; } /* 單元標題 */
+            h3 { font-size: 1.3rem !important; }
+            .features-grid, .vehicles-grid, .plans-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                display: grid !important;
             }
-            
             /* 4. 特別調整「立即預約」按鈕 */
             .cta-button {
                 background-color: var(--primary-color) !important; /* 保持藍色 */
@@ -426,6 +433,16 @@
 
             .card, .feature-card, .plan-card {
                 padding: 30px 20px;!important; /* 減少卡片內邊距 */
+            }
+            .trust-bar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding: 20px;
+            }
+            .trust-item {
+                font-size: 14px; /* 這裡字可以稍微小一點 */
+                justify-content: flex-start;
             }
         
         /* 讓取消政策的字也大一點 */
@@ -623,7 +640,7 @@
     
                  <h4 style="margin-top: 0; color: #0f2a4a; margin-bottom: 20px;">
                       取消與變更政策 
-                      <span style="font-size: 0.8em; font-weight: normal; color: #888; display: block; margin-top: 5px;">
+                      <span style="font-size: 0.9em; font-weight: normal; color: #888; display: block; margin-top: 5px;">
             (時間以日本標準時間 GMT+9 為準)
                       </span>
                  </h4>
@@ -656,7 +673,7 @@
 
                   <hr style="border: 0; border-top: 1px dashed #eee; margin: 20px 0;">
 
-                  <p style="font-size: 0.9rem; color: #777; margin-bottom: 0; line-height: 1.6;">
+                  <p style="font-size: 0.8rem; color: #777; margin-bottom: 0; line-height: 1.6;">
                        <strong style="color: #0f2a4a;">🌀 特殊情況 (不可抗力)：</strong><br>
                        若遇颱風、天災等不可抗力因素（以當地政府發布警報或飛機停飛為準），我們將協助改期或 <span style="border-bottom: 1px solid #007bff; color: #007bff;">全額退款</span>，不收取任何手續費。
                   </p>
@@ -674,7 +691,7 @@
 
     <div style="background: white; border-left: 5px solid #007bff; padding: 20px; text-align: left; max-width: 600px; margin: 0 auto 30px auto; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
         <h4 style="margin-top: 0; color: #333;">📋 諮詢/預約範本 (請複製並填寫)</h4>
-        <div style="font-family: monospace; color: #555; background: #f0f2f5; padding: 15px; border-radius: 5px; font-size: 0.95rem; line-height: 1.8;">
+        <div style="font-family:Noto Sans TC; color: #555; background: #f0f2f5; padding: 15px; border-radius: 5px; font-size: 0.9rem; line-height: 1.8;">
             1. 用車日期：2026/xx/xx<br>
             2. 出發時間：09:00<br>
             3. 人數行李：x位大人，x位小孩，x件行李<br>
